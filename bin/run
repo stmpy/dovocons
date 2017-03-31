@@ -1,0 +1,11 @@
+#!/bin/bash
+
+NAME=${NAME:-dovocons}
+HOST_PORT=${HOST_PORT:-873}
+
+docker run -dit --rm \
+  --name $NAME \
+  -e "OWNER=$(id -u)" \
+  -e "GROUP=$(id -g)" \
+  -p "$HOST_PORT:873" \
+  dovocons
